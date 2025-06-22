@@ -1,7 +1,5 @@
 # Uber-data-pipeline
 
-Aditya, you're *very* close now — this is a **PowerShell security restriction**, not a Python issue. Let's fix it in 10 seconds:
-
 ---
 
 ## ✅ Problem:
