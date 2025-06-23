@@ -1,0 +1,5 @@
+ride_id,timestamp,pickup_location,drop_location,distance_km,fare_amount,payment_method,driver_id,rating
+RIDE001,2025-01-01 08:15:00,MG Road,Whitefield,12.5,240.0,Card,DRV001,4.5
+RIDE002,2025-01-01 09:30:00,Indiranagar,Airport,40.0,680.0,UPI,DRV002,5.0
+RIDE003,2025-01-02 12:45:00,Whitefield,Electronic City,22.0,430.0,Cash,DRV003,3.8
+RIDE004,2025-01-03 18:20:00,Koramangala,Majestic,10.2,210.0,Wallet,DRV004,4.2
