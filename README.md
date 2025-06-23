@@ -184,3 +184,192 @@ Each folder has its purpose:
 ---
 
 
+---
+
+##  Ingestion Script (`ingest_sharepoint.py`)
+
+📌 **Goal**: Simulate SharePoint file ingestion by copying files from `data/raw/` to a mock SharePoint folder (`data/sharepoint/`) and prepare for staging.
+
+---
+
+###  Script File Location
+
+Create a new Python file inside the `src/` directory:
+
+```
+src/ingest_sharepoint.py
+```
+
+---
+
+
+
+
+Run this command:
+
+```bash
+mkdir data\sharepoint
+```
+
+This mimics the SharePoint source for your pipeline.
+
+---
+
+
+In your terminal (from project root):
+
+```bash
+python src/ingest_sharepoint.py
+```
+
+You should see:
+
+```
+Ingested 'uber_rides_jan.csv' to SharePoint folder.
+```
+
+And you’ll find a copy of the CSV inside:
+```
+data/sharepoint/
+```
+
+---
+
+
+| Task                        | Status |
+|-----------------------------|--------|
+| `ingest_sharepoint.py` created | ✅    |
+| Simulated SharePoint folder created | ✅ |
+| Raw file copied to sharepoint dir | ✅ |
+
+---
+
+
+
+---
+
+##  Create `stage_files.py`
+
+📌 **Goal**:  
+Simulate a staging area where we:
+- Copy files from `data/sharepoint/` to `data/staging/`
+- Rename them with a timestamp to avoid name clashes and track load date
+
+---
+
+###  File Location
+Create the file:
+```
+src/stage_files.py
+```
+
+---
+
+
+
+
+
+###  Run the Script
+
+Make sure you're in the root folder:
+
+```bash
+python src/stage_files.py
+```
+
+Example output:
+```
+Staged: uber_rides_jan.csv as 20250623_145705_uber_rides_jan.csv
+```
+
+---
+
+###  Check Your Folder
+
+You should now see a copy in:
+
+```
+data/staging/
+```
+
+✅ With a **timestamp-prefixed filename**, like:
+```
+20250623_145705_uber_rides_jan.csv
+```
+
+---
+
+##  Step Complete 🎉
+
+| Task                                 | Status |
+|--------------------------------------|--------|
+| Created `stage_files.py`             | ✅     |
+| Renamed + copied files to staging    | ✅     |
+| Prepared for transformation stage    | ✅     |
+
+---
+
+---
+
+##  `transform_data.py` — Data Cleaning & Transformation
+
+📌 **Goal**:  
+Read the staged files, clean them (remove nulls), and combine them into a single **processed** and **final** output.
+
+---
+
+### File Location
+
+Create:
+```
+src/transform_data.py
+```
+
+---
+
+### 🧠 What This Script Will Do:
+1. Load all `.csv` files from `data/staging/`
+2. Drop empty rows
+3. Assign a unique `trip_id` if needed
+4. Concatenate them into a single DataFrame
+5. Save to:
+   - `data/processed/processed.csv`
+   - `data/final/final_output.csv`
+
+---
+
+
+
+###  How to Run It
+
+```bash
+python src/transform_data.py
+```
+
+✅ Output:
+```
+✅ Transformation complete. Final file saved to: data/final/final_output.csv
+```
+
+---
+
+### 🔎 Check Your Output
+
+Now you’ll find:
+- Clean, merged file in `data/processed/processed.csv`
+- Final CSV in `data/final/final_output.csv`
+
+Open it in Excel or VS Code to verify.
+
+---
+
+## Done 
+
+| Task                            | Status |
+|----------------------------------|--------|
+| Read and cleaned staged files    | ✅     |
+| Dropped nulls, standardized cols | ✅     |
+| Merged into processed + final    | ✅     |
+
+---
+
