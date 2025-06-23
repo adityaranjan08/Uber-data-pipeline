@@ -14,14 +14,14 @@ running scripts is disabled on this system
 
 ## ✅ Solution: Temporarily Allow Script Execution
 
-### 🔓 Step 1: Open PowerShell as Administrator
+### Open PowerShell as Administrator
 
 1. Click Start → type `powershell`
 2. Right-click → **Run as Administrator**
 
 ---
 
-### ⚙️ Step 2: Change Execution Policy (Temporary & Safe)
+### Change Execution Policy (Temporary & Safe)
 
 In the **admin PowerShell window**, run this:
 
@@ -35,7 +35,7 @@ Then press `Y` (if prompted).
 
 ---
 
-### ▶️ Step 3: Now Activate Your Environment
+###  Now Activate Your Environment
 
 In the same PowerShell session, run:
 
@@ -60,7 +60,7 @@ Boom! 💥 That’s exactly what we wanted, Ayush — now your virtual environme
 
 ---
 
-## ✅ **Step 1.4: Install Required Packages**
+## Install Required Packages**
 
 Now inside your activated terminal (`(venv)` showing), install the core libraries you need for the pipeline.
 
@@ -83,7 +83,7 @@ Explanation:
 
 ---
 
-## ✅ Step 1.5: Save Dependencies
+## Save Dependencies
 
 Run this command to freeze the installed packages into a file:
 
@@ -111,7 +111,7 @@ office365-rest-python-client==2.4.17
 
 ---
 
-## ✅ STEP 1.6: Create the Folder Structure for Your Data Pipeline
+## Create the Folder Structure for Your Data Pipeline
 
 📌 Purpose: Organize your project files into logical directories for raw data, staging, processed outputs, scripts, and logs.
 
