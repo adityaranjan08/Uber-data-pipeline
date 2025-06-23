@@ -80,11 +80,6 @@ Explanation:
 
 ---
 
-### 🔹 Wait for it to finish — you should see something like:
-
-```
-Successfully installed pandas-2.x.x openpyxl-3.x.x ...
-```
 
 ---
 
@@ -112,7 +107,7 @@ office365-rest-python-client==2.4.17
 
 ---
 
-Awesome Ayush! 🎉 Now that Step 1.5 is complete and your `requirements.txt` is correctly populated, let’s move to the final part of Step 1.
+ `requirements.txt` is correctly populated, let’s move to the final part of Step 1.
 
 ---
 
