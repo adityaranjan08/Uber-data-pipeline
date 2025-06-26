@@ -2,7 +2,8 @@
 
 ---
 
-## ✅ Problem:
+
+## Problem:
 
 You're getting this error because **PowerShell doesn’t allow script execution** by default.
 
@@ -12,7 +13,7 @@ running scripts is disabled on this system
 
 ---
 
-## ✅ Solution: Temporarily Allow Script Execution
+## Solution: Temporarily Allow Script Execution
 
 ### Open PowerShell as Administrator
 
@@ -31,7 +32,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 Then press `Y` (if prompted).
 
-✅ This allows scripts to run **only in the current session** (it’s safe and reversible).
+This allows scripts to run **only in the current session** (it’s safe and reversible).
 
 ---
 
@@ -50,13 +51,13 @@ You should now see:
 (venv) PS C:\Users\adity\Documents\GitHub\Uber-data-pipeline>
 ```
 
-Boom! 🎯 You're inside the virtual environment.
+You're inside the virtual environment.
 
 ---
 
 Let me know once this works — then we'll go to:
 
-Boom! 💥 That’s exactly what we wanted, Ayush — now your virtual environment is activated and ready for action.
+Boom!  That’s exactly what we wanted, Ayush — now your virtual environment is activated and ready for action.
 
 ---
 
@@ -64,7 +65,7 @@ Boom! 💥 That’s exactly what we wanted, Ayush — now your virtual environme
 
 Now inside your activated terminal (`(venv)` showing), install the core libraries you need for the pipeline.
 
-### 🔹 Run this:
+###  Run this:
 
 ```bash
 pip install pandas openpyxl office365-rest-python-client
@@ -97,7 +98,7 @@ This creates a `requirements.txt` file in your project folder, which is useful f
 * Sharing the project with others
 * Deploying to a server
 
-📁 Example content:
+ Example content:
 
 ```
 pandas==2.2.2
@@ -113,11 +114,11 @@ office365-rest-python-client==2.4.17
 
 ## Create the Folder Structure for Your Data Pipeline
 
-📌 Purpose: Organize your project files into logical directories for raw data, staging, processed outputs, scripts, and logs.
+ Purpose: Organize your project files into logical directories for raw data, staging, processed outputs, scripts, and logs.
 
 ---
 
-### 🪜 Step-by-Step Commands (in PowerShell)
+### Step-by-Step Commands (in PowerShell)
 
 Make sure you’re still inside your project folder:
 
@@ -139,7 +140,7 @@ mkdir logs
 
 ---
 
-### ✅ Expected Folder Structure
+###  Expected Folder Structure
 
 After running the above, type:
 
@@ -188,7 +189,7 @@ Each folder has its purpose:
 
 ##  Ingestion Script (`ingest_sharepoint.py`)
 
-📌 **Goal**: Simulate SharePoint file ingestion by copying files from `data/raw/` to a mock SharePoint folder (`data/sharepoint/`) and prepare for staging.
+ **Goal**: Simulate SharePoint file ingestion by copying files from `data/raw/` to a mock SharePoint folder (`data/sharepoint/`) and prepare for staging.
 
 ---
 
@@ -250,7 +251,7 @@ data/sharepoint/
 
 ##  Create `stage_files.py`
 
-📌 **Goal**:  
+ **Goal**:  
 Simulate a staging area where we:
 - Copy files from `data/sharepoint/` to `data/staging/`
 - Rename them with a timestamp to avoid name clashes and track load date
@@ -292,7 +293,7 @@ You should now see a copy in:
 data/staging/
 ```
 
-✅ With a **timestamp-prefixed filename**, like:
+With a **timestamp-prefixed filename**, like:
 ```
 20250623_145705_uber_rides_jan.csv
 ```
@@ -313,7 +314,7 @@ data/staging/
 
 ##  `transform_data.py` — Data Cleaning & Transformation
 
-📌 **Goal**:  
+**Goal**:  
 Read the staged files, clean them (remove nulls), and combine them into a single **processed** and **final** output.
 
 ---
@@ -327,7 +328,7 @@ src/transform_data.py
 
 ---
 
-### 🧠 What This Script Will Do:
+### What This Script Will Do:
 1. Load all `.csv` files from `data/staging/`
 2. Drop empty rows
 3. Assign a unique `trip_id` if needed
@@ -346,9 +347,9 @@ src/transform_data.py
 python src/transform_data.py
 ```
 
-✅ Output:
+Output:
 ```
-✅ Transformation complete. Final file saved to: data/final/final_output.csv
+Transformation complete. Final file saved to: data/final/final_output.csv
 ```
 
 ---
